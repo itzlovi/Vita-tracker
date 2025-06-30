@@ -22,7 +22,7 @@ Welcome to **VitaTrack** – your all-in-one wellness companion! Track your mood
 
 ```bash
 # 1. Clone the repository
- git clone https://github.com/your-username/your-repo-name.git
+ git clone https://github.com/itzlovi/Vita-tracker.git
  cd your-repo-name
 
 # 2. Install dependencies
@@ -32,7 +32,7 @@ Welcome to **VitaTrack** – your all-in-one wellness companion! Track your mood
  npm run dev
 ```
 
-Visit [http://localhost:5173](http://localhost:5173) to view the app.
+Visit [Vita-Tracker](https://vita-tracker-by.netlify.app/) to view the app.
 
 ---
 
