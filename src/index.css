@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  body {
+    @apply bg-gradient-midnight text-white font-sans antialiased min-h-screen;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+  
+  /* Improved text readability */
+  p, span, div {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-dark-200 backdrop-blur-xl rounded-2xl shadow-card border border-white/10 p-6;
+    background: linear-gradient(135deg, 
+      rgba(30, 41, 59, 0.9) 0%, 
+      rgba(51, 65, 85, 0.8) 50%, 
+      rgba(30, 41, 59, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .card:hover {
+    @apply shadow-card-hover;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-primary text-white shadow-glow-md hover:shadow-glow-lg focus:ring-primary-500/50;
+    background: linear-gradient(135deg, #8b3dff 0%, #d946ef 100%);
+    box-shadow: 
+      0 4px 12px rgba(139, 61, 255, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+      0 6px 16px rgba(139, 61, 255, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+  
+  .btn-secondary {
+    @apply bg-surface-dark-300 hover:bg-surface-dark-200 text-white border border-white/20 focus:ring-white/30;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-white/20 bg-surface-dark-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-400/50 text-white placeholder-slate-300;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  
+  .input:focus {
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.2),
+      0 0 0 1px rgba(139, 61, 255, 0.3),
+      0 0 20px rgba(139, 61, 255, 0.2);
+  }
+  
+  .progress-bar {
+    @apply h-3 rounded-full bg-surface-dark-400 overflow-hidden backdrop-blur-sm;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .progress-bar-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out bg-gradient-primary;
+    box-shadow: 
+      0 0 10px rgba(139, 61, 255, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Navigation styles */
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-slate-300 hover:text-white;
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-item:hover {
+    @apply bg-surface-dark-200;
+    transform: translateX(4px);
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-item.active {
+    @apply bg-gradient-primary text-white shadow-glow-md;
+    background: linear-gradient(135deg, #8b3dff 0%, #d946ef 100%);
+    box-shadow: 
+      0 4px 12px rgba(139, 61, 255, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-item.active:hover {
+    transform: translateX(6px);
+    box-shadow: 
+      0 6px 16px rgba(139, 61, 255, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+  
+  /* Glass effect utilities */
+  .glass-effect {
+    @apply bg-surface-dark-200 backdrop-blur-xl border border-white/10;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(139, 61, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Enhanced readability */
+  .text-primary {
+    @apply text-white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-secondary {
+    @apply text-slate-200;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-muted {
+    @apply text-slate-300;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Animation classes */
+@layer utilities {
+  .animate-breathe {
+    animation: breathe 10s infinite ease-in-out;
+  }
+
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-water-fill {
+    animation: water-fill 1s ease-out forwards;
+  }
+
+  @keyframes water-fill {
+    from {
+      height: 0%;
+    }
+    to {
+      height: 100%;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+}
